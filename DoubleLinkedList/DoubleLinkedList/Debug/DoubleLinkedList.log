@@ -1,0 +1,8 @@
+﻿  Control.cpp
+C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Control.cpp(12,11): error C2259: 'Employes': cannot instantiate abstract class
+C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Employes.h(8): message : see declaration of 'Employes'
+C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Control.cpp(12,11): message : due to following members:
+C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Control.cpp(12,11): message : 'void Company::insert(void)': is abstract
+C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Company.h(11): message : see declaration of 'Company::insert'
+  Employes.cpp
+  Generating Code...
