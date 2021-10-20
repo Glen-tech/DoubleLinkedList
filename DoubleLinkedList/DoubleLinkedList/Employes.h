@@ -11,14 +11,28 @@ public:
 
 	Employes();
 
+    string input;
+    string spaycheck;
+    int IntInput;
+
+    struct employes* new_node;
+
 
     void insert();
+    void print();
+
+    struct AddEmployes
+    {
+        string name;
+        string function;
+        float fpaycheck;
+    }adding;
 
     struct employes
     {
         string name;
         string function;
-        float payCheck;
+        float fpayCheck;
         int yearsOfService;
 
         struct employes* prev;
@@ -29,7 +43,7 @@ public:
     } workers;
 
     void pushEmployes(employes** headEmployes, string nameEmployer, string functionEmployer, float payCheckEmployer);
-    void printEmployes(employes* node);
+    void printEmployes(employes * new_node);
 
 
 
