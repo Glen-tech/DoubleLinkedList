@@ -13,6 +13,8 @@ public:
 
     string input;
     string spaycheck;
+    string search;
+
     int IntInput;
 
     struct employes* new_node;
@@ -43,7 +45,9 @@ public:
     } workers;
 
     void pushEmployes(employes** headEmployes, string nameEmployer, string functionEmployer, float payCheckEmployer);
-    void printEmployes(employes * new_node);
+    void printEmployesForward(employes ** PrintHead);
+    void printEmployesBackward(employes** PrintHead);
+    void search_node(employes** Printhead);
 
 
 

@@ -48,7 +48,6 @@ void control::insertChoise()
 			}
 
 			cin >> input;
-			IntInput = stoi(input);
 		}
 
 }

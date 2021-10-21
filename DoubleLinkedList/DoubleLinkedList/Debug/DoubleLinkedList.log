@@ -1,8 +1,5 @@
-﻿  Control.cpp
-C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Control.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Employes.cpp
+﻿  Employes.cpp
 C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\control.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Employes.cpp(113,20): warning C4150: deletion of pointer to incomplete type 'employes'; no destructor called
+C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Employes.cpp(148,20): warning C4150: deletion of pointer to incomplete type 'employes'; no destructor called
 C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\DoubleLinkedList\Employes.h(18): message : see declaration of 'employes'
-  Generating Code...
   DoubleLinkedList.vcxproj -> C:\Users\glen_\OneDrive\Documenten\GitHub\DoubleLinkedList\DoubleLinkedList\Debug\DoubleLinkedList.exe

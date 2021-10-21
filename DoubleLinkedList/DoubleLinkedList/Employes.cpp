@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-enum employer {ADD = 1 , DELETE, PRINT, GO_BACK};
+enum employer {ADD = 1 , DELETE, PRINT_FORWARD, PRINT_BACKWARD, SEARCH,GO_BACK};
 
 Employes::Employes()
 {
@@ -32,24 +32,34 @@ void Employes::insert()
     print(); // show instructions;
 
     cin >> input;
-    IntInput = stoi(input);
 
     while (true)
     {
         switch (stoi(input))
         {
             case ADD: 
-                cout << "Enter name" << endl;
+                /*cout << "Enter name" << endl;
                 cin >> adding.name;
                 cout << "Enter function" << endl;
                 cin >> adding.function;
                 cout << "Enter Paycheck" << endl;
                 cin >> adding.fpaycheck;
-                pushEmployes(&workers.HeadEmployes, adding.name, adding.function, adding.fpaycheck);
+                pushEmployes(&workers.HeadEmployes, adding.name, adding.function, adding.fpaycheck);*/
+
+                pushEmployes(&workers.HeadEmployes, "Glen", "Beetje vanalles", 1600);
+                pushEmployes(&workers.HeadEmployes, "Maud", "Goed haar best doen", 1500);
+                pushEmployes(&workers.HeadEmployes, "Eric", "Beetje kaal", 3000);
+                pushEmployes(&workers.HeadEmployes, "Eliane", "Zorgen voor oudjes", 2500);
+                pushEmployes(&workers.HeadEmployes, "Tara", "Iets met rechten", 2400);
+
                 break;
             case DELETE: cout << "work in progress" << endl; break;
 
-            case PRINT:  cout << "work in progress" << endl; break;
+            case PRINT_FORWARD:   printEmployesForward(&workers.HeadEmployes);  break;
+
+            case PRINT_BACKWARD:  printEmployesBackward(&workers.HeadEmployes); break;
+
+            case SEARCH: cout << "work in progress" << endl; break;
 
             case GO_BACK: return; // exit while loop and return
 
@@ -70,8 +80,9 @@ void Employes::print()
         cout << "Choise what you want to do" << endl;
         cout << "Press 1 to add  employer" << endl;
         cout << "Press 2 to delete employer" << endl;
-        cout << "Press 3 to print" << endl;
-        cout << "Press 4 to go back" << endl;
+        cout << "Press 3 to print forward" << endl;
+        cout << "Press 4 to print backward" << endl;
+        cout << "Press 5 to go back" << endl;
 }
 
 
@@ -87,23 +98,53 @@ void Employes::pushEmployes(employes** headEmployes, string nameEmployer, string
 
     if ((*headEmployes) != NULL)
     {
-        (*headEmployes)->prev = new_node;
+        (*headEmployes)->prev = new_node; // set prev to next
     }
 
-    *headEmployes = new_node;
+    *headEmployes = new_node; // head is now the new_node for adding
 
    
 }
 
-void Employes::printEmployes(employes *new_node)
+void Employes::printEmployesForward(employes **print_node_forward_head)
 {
-    while (new_node != NULL)
+    struct employes* tail = *print_node_forward_head; // tail is beginning of the list
+
+    while (tail != nullptr)
     {
-        cout << new_node->name << endl;
-        cout << new_node->function << endl;
-        cout << new_node->fpayCheck << endl;
+        cout << tail->name << endl;
+        cout << tail->function << endl;
+        cout << tail->fpayCheck << endl;
+
+        tail = tail->next; // go to next node
     }
 }
+
+void Employes::printEmployesBackward(employes** print_node_backwards_head)
+{
+    struct employes* tail = *print_node_backwards_head; // tail is beginning of the list
+    
+    while (tail->next != nullptr) // go to end of the double linked list
+    {
+        tail = tail->next;
+    }
+
+    while(tail != nullptr) // no print backwards
+    {
+        cout << tail->name << endl;
+        cout << tail->function << endl;
+        cout << tail->fpayCheck << endl;
+
+        tail = tail->prev; // go to prev node
+    }
+
+}
+
+void Employes::search_node(employes** search_node_head)
+{
+    // work in progress
+}
+
 
 Employes::~Employes()
 {
